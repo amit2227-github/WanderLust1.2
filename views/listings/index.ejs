@@ -3,11 +3,13 @@
     <h3>All Listings</h3>
  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
   <% for(let listing of allListing){ %>
+    <a href="/listings/<%= listing.id %>" class="listing-links">
     <div class="col">
       <div class="card h-100">
         <div class="ratio ratio-4x3">
           <img src="<%= listing.image %>" class="card-img-top rounded" alt="listing_image" style="object-fit: cover;">
         </div>
+        <div class="card-img-overlay"></div>
         <div class="card-body">
           <p class="card-text">
             <b><%= listing.title %></b><br>
@@ -16,6 +18,7 @@
         </div>
       </div>
     </div>
+    </a>
   <% } %>
 </div>
 

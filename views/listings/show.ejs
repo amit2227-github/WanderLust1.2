@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WanderLust </title>
-</head>
+<% layout("/layouts/bolierplate") %>
 <body>
     <h3>Listing Details:</h3>
     <ul>
         <li><%= listing.title %></li>
         <li><%= listing.description %></li>
-        <li> &#8377;<%= listing.price.toLocalString("en-IN")%></li>
+        <li>&#8377;<%= listing.price.toLocaleString("en-IN") %></li>
+
         <li><%= listing.location %></li>
         <li><%= listing.country %></li>
     </ul>
@@ -23,4 +18,3 @@
 
 
 </body>
-</html>
