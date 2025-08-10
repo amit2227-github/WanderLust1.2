@@ -1,9 +1,10 @@
 <% layout("/layouts/bolierplate") %>
-<div class="row">
+<div class="row mt-3">
   <div class="col-8 offset-2">
 <body>
-      <form action="/listings/<%= listing.id %>?_method=PUT" method="post">
-         <div class="mb-3">
+  <h2>Edit Your Listing</h2>
+      <form action="/listings/<%= listing.id %>?_method=PUT" method="post" novalidate class="needs-validation">
+         <div class="mb-3 ">
            <label 
                 for="title"  
                 class="form-label">
@@ -13,7 +14,7 @@
               name="listing[title]" 
               value="<%= listing.title %>" 
               type="text" 
-              class="form-control">
+              class="form-control" required>
          </div>
           <div class="mb-3">
               <label 
@@ -23,7 +24,7 @@
               </label>
               <textarea 
                 name="listing[description]" 
-                type="text" class="form-control"> <%= listing.description %> 
+                type="text" class="form-control" required> <%= listing.description %> 
               </textarea>
           </div>
           <div class="mb-3">
@@ -35,7 +36,7 @@
               <input 
                 name="listing[image]" 
                 value="<%= listing.image %>" 
-                class="form-control">
+                class="form-control" required>
           </div>
           <div class="row">
 
@@ -49,7 +50,8 @@
                     name="listing[price]" 
                     value="<%= listing.price %>" 
                     type="number"
-                    class="form-control">
+                    class="form-control" required>
+                    <div class="invalid-feedback">Please Enter valid Price</div>
           </div>
           <div class="mb-3 col-md-8">
               <label 
@@ -61,7 +63,9 @@
                 name="listing[location]" 
                 value="<%= listing.location %>" 
                 type="text"
-                class="form-control">
+                class="form-control" required>
+                <div class="invalid-feedback">Enter valid Location</div>
+
           </div>
           </div>
           <div class="mb-3">
@@ -74,11 +78,14 @@
                 name="listing[country]" 
                 value="<%= listing.country %>" 
                 type="text"
-                class="form-control">
+                class="form-control" required>
+                 <div class="invalid-feedback">Enter valid Country</div>
           </div>
-
-        <button class="btn btn-dark add-btn">Edit</button>
+          
+        <button class="btn btn-dark add-btn mb-3">Edit</button>
+        <br> 
     </form>
 </body>
 </div>
 </div>
+<script src="/js/script.js"></script>
