@@ -8,6 +8,7 @@ const ejsMate = require("ejs-mate");
 const wrapAsync= require("./utils/wrapAsync.js");
 const ExpressError=require("./utils/ExpressError.js");
 const {listingSchema} = require("./schema.js");
+const Review=require("./models/review.js");
 
 const MONGO_URL='mongodb://127.0.0.1:27017/wanderlust12';
 
@@ -108,6 +109,13 @@ app.delete("/listings/:id",wrapAsync (async (req,res)=>{
     console.log(deleteListing);
     res.redirect("/listings");
 }))
+
+//Reviewa
+//Post Route
+
+app.post("/listings/:id/reviews", async(req,res) =>{
+
+});
 
 app.all("/{*any}",(req,res,next)=>{
     next(new ExpressError(404,"Page Not Found!"));
