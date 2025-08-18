@@ -108,3 +108,8 @@ body{
  .btns{
     display: flex;
  }
+
+ .ms-auto{
+    display:flex;
+    justify-content: end;
+ }
