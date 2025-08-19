@@ -91,6 +91,3 @@ Other Tools
 
 * [Airbnb](https://www.airbnb.com/) for inspiration
 * Open-source community ❤️
-
-
-Do you also want me to make a **short version** (just intro + setup + features) for your GitHub front page, or keep this **detailed version**?
